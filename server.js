@@ -17,6 +17,8 @@ const devConfig={
   connectionTimeoutMillis: 0,
   idleTimeoutMillis: 0,
 }
+var port_number = app.listen(process.env.PORT || 3000);
+app.listen(port_number);
 const proConfig = {
   connectionString: process.env.DATABASE_URL
 }
@@ -144,4 +146,4 @@ const results = await  pool.query('INSERT INTO art values($1,$2)',[req.body.ssid
     response.status(201).send(`User added`)
   }) 
 })
-app.listen(4000,()=>console.log('Listening on 4000'))
+// app.listen(4000,()=>console.log('Listening on 4000'))
