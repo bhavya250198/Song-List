@@ -87,7 +87,7 @@ handleChange = date => {
             bio:this.state.bio,
             todo_completed: this.state.todo_completed
         };
-        axios.post('http://localhost:4000/add', artist)
+        axios.post('/add', artist)
             .then(res => console.log(res.data));
         
         this.setState({
