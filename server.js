@@ -17,8 +17,8 @@ const devConfig={
   connectionTimeoutMillis: 0,
   idleTimeoutMillis: 0,
 }
-var port_number = app.listen(process.env.PORT || 3000);
-app.listen(port_number);
+var port_number = app.listen(process.env.PORT || 4000);
+app.listen(port_number,console.log("running",port_number));
 const proConfig = {
   connectionString: process.env.DATABASE_URL
 }
