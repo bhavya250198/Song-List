@@ -10,9 +10,10 @@ function App() {
   return (
     <React.Fragment>
       <Router>
-        <Route path ="/home" component={Homepage}/>
+        <Route path ="/" component={Homepage}/>
         <Route path ="/artist/addartist" component={AddSongs}/>
-        <Route path ="/addsongs" component={Songs} />
+         <Route path ="/addsongs" component={Songs} />
+         
         </Router>
     </React.Fragment>
   );

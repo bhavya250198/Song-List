@@ -36,7 +36,7 @@ class OtherPage1 extends  Component {
 
 
     fetchData(){
-        axios.get('http://localhost:5000/artists')
+        axios.get('/artists')
             .then(response => {
                 console.log(response);
                 

@@ -13,7 +13,7 @@ class Song extends Component {
         
     }
     changeRating( newRating, name ) {
-        axios.post('http://localhost:4000/songs/rate',{ newrating: newRating,
+        axios.post('/songs/rate',{ newrating: newRating,
         sid:this.props.song.sid
 
     }
@@ -66,7 +66,7 @@ class OtherPage extends  Component {
 
 
     fetchData(){
-        axios.get('http://localhost:4000/songs')
+        axios.get('/songs')
             .then(response => {
                 console.log(response);
                 

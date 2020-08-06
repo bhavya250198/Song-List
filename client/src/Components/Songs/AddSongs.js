@@ -62,7 +62,7 @@ import "react-datepicker/dist/react-datepicker.css";
     
     componentDidMount()
     {
-        axios.get('http://localhost:4000/getartist')
+        axios.get('/getartist')
             .then(response => {
                 console.log(response);
                 
@@ -167,11 +167,11 @@ onClick=()=>{
             rate: this.state.rate,
             todo_completed: this.state.todo_completed
         };
-        axios.post('http://localhost:4000/add123',songs)
+        axios.post('/add123',songs)
             .then(res => console.log(res.data));
         };
             console.log(this.state.artistlist);
-        axios.get('http://localhost:4000/newsongsid')
+        axios.get('/newsongsid')
         .then(response => {
             console.log(response);
             
@@ -182,7 +182,7 @@ onClick=()=>{
             for(i=0;i<this.state.artistlist.length;i++)
         {   
             // console.log(this.state.csid);
-            axios.post('http://localhost:4000/addsongartist',{ssid:this.state.csid,caid:this.state.artistlist[i].id})
+            axios.post('/addsongartist',{ssid:this.state.csid,caid:this.state.artistlist[i].id})
             .then(res => console.log(res.data));
         // this.setState({
         //     song: '',
