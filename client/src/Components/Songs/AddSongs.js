@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import axios from 'axios';
-import Homie from './Home';
+// import Homie from './Home';
+import {Button} from "react-bootstrap";
+import {withRouter} from "react-router-dom";
 import { Multiselect } from 'multiselect-react-dropdown';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -42,7 +44,7 @@ import "react-datepicker/dist/react-datepicker.css";
         this.onSelect=this.onSelect.bind(this);
         // this.onChangeTodoPriority = this.onChangeTodoPriority.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
-       
+      this.onClick= this.onClick.bind(this);
         this.state = {
             song: '',
             dor: '',
@@ -132,7 +134,9 @@ onSelect(selectedList, selectedItem) {
     //         todo_priority: e.target.value
     //     });
     // }
-
+onClick=()=>{
+        this.history.push('/addsongs');
+}
     onSubmit(e) {
         e.preventDefault();
         console.log('Hello');
@@ -216,7 +220,7 @@ onSelect(selectedList, selectedItem) {
         return (
             <div style={{marginTop: "41px",marginLeft: "429px",
               marginRight: "513px"}}>
-                <h2>Add a new song </h2>
+                <Button onClick={this.onClick}>Add a new song </Button>
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group"> 
                         <label>Song Name: </label>
@@ -281,4 +285,4 @@ onSelect(selectedList, selectedItem) {
         )
     }
 }
-export default Songs;
+export default withRouter(Songs);

@@ -1,13 +1,11 @@
 import React from 'react';
 import PrimarySearchAppBar from '../NavigationBar/NavigationBar';
 import CreateTodo123 from '../Artists/Addartist';
-import OtherPage1 from '../Artists/artist.component';
-import OtherPage from '../Songs/song.component';
 import Songs from '../Songs/AddSongs';
 import {BrowserRouter as Router,Route} from "react-router-dom";
 
 
-class Homepage extends React.Component{
+class Addsongs extends React.Component{
     constructor(props)
     {
         super(props);
@@ -21,8 +19,8 @@ class Homepage extends React.Component{
             <React.Fragment>
               <Router>
               <PrimarySearchAppBar/>
-              <OtherPage1/>
-              <OtherPage/>
+              <CreateTodo123/>
+              {/* <Route path = "/addsongs" component ={Songs}/> */}
               </Router>
             </React.Fragment>
           );
@@ -30,4 +28,4 @@ class Homepage extends React.Component{
 }
  
 
-export default Homepage;
+export default AddSongs;
